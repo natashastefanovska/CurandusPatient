@@ -1,0 +1,16 @@
+<Panel ux:Class="SendImage" Margin="0,0,0,16">
+	<string ux:Property="ImageFromYour" />
+	<string ux:Property="Interval" />
+	<string ux:Property="Repeat" />
+
+<StackPanel>
+	<Rectangle Color="White">
+		<StackPanel>
+			<FloatingLabel Value="{Property this.ImageFromYour}" PlaceholderText="image from your:"  Margin="32, 8, 32, 0" />
+			<FloatingLabel Value="{Property this.Interval}" PlaceholderText="interval on:" InputHint="Number" Margin="32, 8, 32, 0" />
+			<FloatingLabel Value="{Property this.Repeat}" PlaceholderText="repeat on:" InputHint="Number" Margin="32, 8, 32, 0" />
+			<!-- <FloatingLabelArea Value="{Property this.Repeat}" PlaceholderText="repeat on" Margin="32, 8, 32, 0" /> -->
+		</StackPanel>
+	</Rectangle>
+</StackPanel>
+</Panel>

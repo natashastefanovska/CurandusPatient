@@ -1,0 +1,45 @@
+<DefaultPage ux:Class="WelcomePage">
+<Router ux:Dependency="router" />
+
+	<JavaScript File="WelcomePage.js" />
+
+	<DockPanel>         
+		
+	    <StackPanel >
+
+			<Image File="../../Assets/CurandusLogo.png" Alignment="Center" Height="130" Width="130" Margin="0,100,0,0" />
+ 			<Text  TextWrapping="Wrap" TextAlignment="Center" Color="primary" Font="regular" FontSize="30" Margin="0,50,0,10">Welcome to </Text>
+ 			<Text  TextWrapping="Wrap" TextAlignment="Center" Color="primary" Font="medium" FontSize="35" > CURANDUS</Text>
+
+
+ 			<DockPanel Alignment="Center" >
+				  <WhileFalse Value="{isAgree}">
+				  		<Icon Alignment="Center" Dock="Left" Clicked="{toogleIsAgree}" FontSize="24" Color="primary_text" Margin="0,20,0,0">&#xE835;</Icon>
+				  </WhileFalse>
+				  <WhileTrue Value="{isAgree}">
+				       <Icon Alignment="Center" Dock="Left"  Clicked="{toogleIsAgree}" FontSize="24" Color="primary_text"  Margin="0,20,0,0">&#xE834;</Icon>
+				   </WhileTrue>
+
+
+				  <Text  TextWrapping="Wrap" Dock="Left" TextAlignment="Left" Color="primary_text" Font="regular" FontSize="10" Margin="10, 28, 0, 0">I agree with </Text>
+				   <Text  TextWrapping="Wrap"  Dock="Left" Clicked="{goToTerms}" TextAlignment="Center" Color="primary" Font="regular" FontSize="10" Margin="4, 28, 0, 0">Terms and conditions </Text>
+
+
+ 			</DockPanel>
+
+ 			<DockPanel Alignment="Center">
+ 			 <RaisedButton ux:Name="sendsave" Dock="Left" BtnText="Continue" BtnTextColor="icons" BtnColor="lightgreen" Margin="0,0,-6,0" Clicked="{Continue}" ></RaisedButton>
+
+ 			  
+ 			  <RaisedButton ux:Name="sendsave1" Dock="Right" BtnText="Decline" BtnTextColor="icons" BtnColor="divider" Margin="0,0,-6,0" >
+ 			  		<Clicked>
+							<HomeScreen Type="Finish" />
+						</Clicked>
+ 			  </RaisedButton>
+ 			</DockPanel>
+
+		</StackPanel>    
+			
+	</DockPanel>
+
+</DefaultPage>

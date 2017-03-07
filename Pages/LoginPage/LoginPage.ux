@@ -1,0 +1,33 @@
+<DefaultPage ux:Class="LoginPage">
+<Router ux:Dependency="router" />
+
+<JavaScript File="LoginPage.js" />
+
+		<DockPanel >         
+		    <FloatingButton Alignment="Right" Dock="Bottom" BtnColor="primary" BtnIcon="&#xE315;" BtnTextColor="icons" Clicked="{skip}" />
+
+		   	<StackPanel ux:Name="loginArea">
+			<Text  TextWrapping="Wrap" TextAlignment="Center" Color="primary" Font="regular" FontSize="30" Margin="0,50,0,10">REGISTER</Text>
+		   			
+		    			<Image File="{imagePath}" Width="128" Height="128" Margin="0, 16, 0, 0"/>
+		     			
+						<FloatingLabel Value="{phone}" PlaceholderText="Phone number" InputHint="Number" Margin="32, 16, 32, 0" />
+						<FloatingLabel Value="{firstName}" PlaceholderText="Name" Margin="32, 16, 32, 0" />
+						<FloatingLabel  Value="{lastName}" PlaceholderText="Surname" Margin="32, 16, 32, 0" />
+
+						<FloatingLabelArea PlaceholderText="Chronic disease:" Margin="32, 8, 32, 0" />
+						<FloatingLabelArea PlaceholderText="Alergies:" Margin="32, 8, 32, 0" />
+
+						
+						<Panel>
+    <Selection/>
+</Panel>
+			</StackPanel>
+
+		</DockPanel>
+
+			<WhileKeyboardVisible>
+				<Move Target="loginArea" Y="-200" Duration=".6" Easing="ExponentialInOut"/>
+			</WhileKeyboardVisible>
+
+</DefaultPage>

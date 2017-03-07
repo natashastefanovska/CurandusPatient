@@ -1,0 +1,37 @@
+<DockPanel ux:Class="FloatingLabelArea">
+<string ux:Property="PlaceholderText" />
+<string ux:Property="Value" />	
+<int ux:Property="MaxLength" />
+<TextInputHint ux:Property="InputHint" />
+<TextAlignment ux:Property="TextAlignment" />	
+<Brush ux:Property="Background"/>	
+<Panel Dock="Top">
+		<!--Rectangle Fill="#FFFFFF" Height="20"/-->
+		<Text ux:Name="labeltop" Value="{Property PlaceholderText}" Color="primary" Visibility="Hidden" FontSize="18"/>
+	</Panel>
+<Panel Dock="Bottom">
+	
+	<TextView  ux:Name="input" Value="{Property this.Value}" TextWrapping="Wrap"  Width="100%" MaxLength="{Property this.MaxLength}" InputHint="{Property this.InputHint}" FontSize="22" TextAlignment="{Property this.TextAlignment}" 
+		Background="{Property this.Background}" >
+
+		<Text ux:Name="label" Value="{Property PlaceholderText}" Color="#BDBDBD" FontSize="20" />
+		<Rectangle ux:Name="bottomLine" Fill="#9E9E9E" Height="2" Alignment="Bottom" Layer="Background"/> 
+
+		<WhileContainsText>
+			<Change labeltop.Visibility="Visible" />
+			<Move X="0" Y="-1" Target="labeltop" />
+			<Change label.Visibility = "Hidden" />
+		</WhileContainsText>
+
+		<WhileFocused>
+		<Change bottomLine.Fill="#00BCD4" />
+		<Change label.Color="#00BCD4" />
+		<Change label.FontSize="18" />
+		<Move X="0" Y="-22" Target="label" Duration="0.3" />	
+	</WhileFocused>
+
+	</TextView >
+	
+</Panel>
+
+</DockPanel>
