@@ -22,6 +22,11 @@ function goBack() {
 
 function checkData() {
 
+
+    goToMain();
+
+    return null;
+
     var url = activeUrl.URL + "/curandusproject/webapi/api/CheckProviderActivationKey/" + register.value.deviceId + "&&" + register.value.phone + "&&" + inputCode.value;
 
     console.log("url " + url);
